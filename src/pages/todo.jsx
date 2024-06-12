@@ -1,0 +1,10 @@
+import { TodoTemplate } from "../components/templates/TodoTemplate";
+
+/**
+ * TodoPage
+ * @returns {JSX.Element}
+ * @constructor
+ */
+export const TodoPage = () => {
+  return <TodoTemplate />;
+};
