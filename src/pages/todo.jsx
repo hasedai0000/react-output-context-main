@@ -1,3 +1,9 @@
+/**
+ * TodoPage
+ *
+ * @package pages
+ */
+import { TodoProvider } from "../contexts/TodoContext.jsx";
 import { TodoTemplate } from "../components/templates/TodoTemplate";
 
 /**
@@ -5,6 +11,9 @@ import { TodoTemplate } from "../components/templates/TodoTemplate";
  * @returns {JSX.Element}
  * @constructor
  */
-export const TodoPage = () => {
-  return <TodoTemplate />;
-};
+export const TodoPage = () => (
+  <TodoProvider>
+    {/* TodoProvider直下のコンポーネントでコンテキストに定義した状態、ロジックをどこでも呼び出せる */}
+    <TodoTemplate />
+  </TodoProvider>
+);
