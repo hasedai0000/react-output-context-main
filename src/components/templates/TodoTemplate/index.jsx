@@ -5,7 +5,7 @@
  */
 import { InputForm } from "../../atoms/InputForm";
 import { AddTodo } from "../../organisms/AddTodo";
-import { TodoList } from "../../organisms/TodoLlist";
+import { TodoList } from "../../organisms/TodoList";
 import { useTodoContext } from "../../../contexts/TodoContext.jsx";
 import styles from "./styles.module.css";
 
@@ -47,11 +47,13 @@ export const TodoTemplate = () => {
       </section>
       {/* Todoリスト一覧表示 */}
       <section className={styles.common}>
-        {showTodoList.length > 0 && (
+        {showTodoList.length > 0 ? (
           <TodoList
             todoList={showTodoList}
             handleDeleteTodo={handleDeleteTodo}
           />
+        ) : (
+          <p>No todos found.</p>
         )}
       </section>
     </div>
